@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 
 class Client:
-    client_dict = { '192.168.7.12' : 5000}
+    client_dict = {'192.168.7.12' : 4999,"10.0.44.240":5999,"10.0.44.169":6999,"192.168.7.13":7999,"10.0.47.208":8999,"10.0.27.111":9999 }
 
     def __init__(self,model,trainer):
         """
@@ -25,7 +25,7 @@ class Client:
         """
         self.serverPort=1
         self.clientIp = gethostbyname(gethostname()) 
-        self.clientPort = Client.client_dict[self.clientIp]
+        self.clientPort = Client.client_dict[self.clientIp]+1
 
 
     def getEpochs(self):
