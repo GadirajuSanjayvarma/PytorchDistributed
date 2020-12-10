@@ -9,7 +9,7 @@ class FileReceiver:
         This function takes files from server 
         and create same files in this commp[uter with same names.]
         """ 
-        host = '192.168.7.19'
+        host = '10.0.45.47'
         """
         We implemented only onle computer as server.
         So thae variable host holds is the ipv4 address
