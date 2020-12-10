@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 
 class Client:
-    client_dict = {'192.168.7.12' : 4999,"10.0.44.240":5999,"10.0.44.169":6999,"192.168.7.13":7999,"10.0.47.208":8999,"10.0.27.111":9999 }
+    client_dict = {'10.0.45.44' : 4999,"10.0.44.240":5999,"10.0.44.169":6999,"192.168.7.13":7999,"10.0.47.208":8999,"10.0.27.111":9999 }
 
     def __init__(self,model,trainer):
         """
@@ -19,7 +19,7 @@ class Client:
         """
         self.model = model
         self.trainer = trainer
-        self.serverIP = '192.168.7.19'
+        self.serverIP = '10.0.45.47'
         """
         gethostbyname() and gethostname() are from socket module
         """
