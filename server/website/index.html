@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <style>
+    .inputElement
+        {
+            
+            background-color: red;
+            display:flex;
+            flex-direction: column;
+            flex: 1;
+
+        }
+    textarea
+    {
+        width: 100%;
+        height: 100%;
+        font-family:"Times New Roman", Times, serif;  
+        font-size: 25px;   
+
+    }
+        </style>
+        <script src="lib/codemirror.js"></script>
+        <link rel="stylesheet" href="lib/codemirror.css">
+        <script src="mode/javascript/javascript.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+</head>
+<body>
+    <h1>Pytorch distributed</h1>>
+    <form action="/action_page.php">
+        <h1><label for="ipaddress">Set Client Ip address:</label></h1>>
+        <div  class="inputElement">
+        <textarea  id="ipaddress" name="ipaddress" rows="30" cols="700"></textarea>
+        <button type="button" onclick="createIptxt()">Set these ipaddress</button>
+        </div>
+        <h1><label for="model">Set Model code</label></h1>>
+        <div  class="inputElement">
+        <textarea  id="model" name="model" rows="30" cols="700"></textarea>
+        <button type="button" onclick="createmodelFile()">Set model</button>
+        </div>
+        <h1><label for="training">set training code</label></h1>
+        <div  class="inputElement">
+        <textarea  id="training" name="training" rows="30" cols="700"></textarea>
+        <button type="button" onclick="trainingDo()">Set training</button>
+        </div>
+        <h1><label for="dataloading">set serverCode</label></h1>>
+        <div  class="inputElement">
+        <textarea  id="dataloading" name="dataloading" rows="30" cols="700"></textarea>
+        <button type="button" onclick="userFile()">Set serverCode</button>
+        </div>
+         
+    
+    </form>
+
+    <script>
+        function trainingDo() {
+          //console.log( document.getElementById("training").value);
+          var blob = new Blob( [document.getElementById("training").value], {type: "text/plain;charset=utf-8"});
+          saveAs(blob, "modelTraining.py");
+        }
+
+        function createIptxt() {
+          //console.log( document.getElementById("ipaddress").value);
+          var blob = new Blob( [document.getElementById("ipaddress").value], {type: "text/plain;charset=utf-8"});
+          saveAs(blob, "ipAddress.txt");
+        }
+
+        function createmodelFile() {
+          //console.log( document.getElementById("model").value);
+          var blob = new Blob( [document.getElementById("model").value], {type: "text/plain;charset=utf-8"});
+          saveAs(blob, "model.py");
+        }
+        function userFile() {
+          //console.log( document.getElementById("dataloading").value);
+          var blob = new Blob( [document.getElementById("dataloading").value], {type: "text/plain;charset=utf-8"});
+          saveAs(blob, "userFile.py");
+        }
+        
+        
+    </script>
+      
+
+
+</body>
+</html>
